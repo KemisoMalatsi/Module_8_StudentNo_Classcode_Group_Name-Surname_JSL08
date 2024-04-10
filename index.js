@@ -21,7 +21,7 @@
 
 class BankBranch {
     constructor(branchInfo) {
-        if (BankBranch.bankBranchInstance) {
+        if (!BankBranch.bankBranchInstance) {
             this.branchInfo = branchInfo;
             BankBranch.bankBranchInstance = this;
         }
@@ -34,6 +34,27 @@ class BankBranch {
         return this.branchInfo
     }
 }
+
+// Usage section
+
+
+const branchA = new BankBranch({
+    branch: "Cape Town",
+    branchCode : "00000",
+    manager: "Kitso Mogale",
+    tradingHours:"Monday to Friday, 9:00 AM to 5:00 PM"
+});
+const branchB = new BankBranch({
+    branch: "Bafokeng",
+    BranchCode : "01010",
+    manager: "Kutlwano Ramotebele",
+    tradingHours:"Monday to Friday, 7:00 AM to 3:00 PM"
+});
+
+console.log(branchA.getBranchInfo());
+console.log(branchB.getBranchInfo());
+
+console.log(branchA === branchB);
 
 
 

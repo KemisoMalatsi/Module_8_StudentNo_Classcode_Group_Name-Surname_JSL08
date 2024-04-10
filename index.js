@@ -19,6 +19,29 @@
 
 // This pseudo-code provides a step-by-step explanation of how to implement the Singleton Pattern for managing a single instance of the `BankBranch` class throughout the application, ensuring that multiple instances refer to the same object.
 
+class BankBranch {
+    constructor(branchInfo) {
+        if (BankBranch.bankBranchInstance) {
+            this.branchInfo = branchInfo;
+            BankBranch.bankBranchInstance = this;
+        }
+        return BankBranch.bankBranchInstance
+    }
+
+    // Add method on the BankBranch class to manage the branch info
+
+    getBranchInfo() {
+        return this.branchInfo
+    }
+}
+
+
+
+
+
+
+
+
 // NOTES:
 // This example demonstrates the Singleton pattern by creating a single instance of the `BankBranch` class.
 // Even if we attempt to create another instance of the branch, we receive the original instance,
